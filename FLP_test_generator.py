@@ -160,6 +160,20 @@ def sum_of_values(stations_dictionary):
         sum_values += stations_dictionary[key]
     return sum_values
 
+def create_folders():
+    if not os.path.exists('./CNFs/'):
+        os.makedirs('./CNFs/')
+        print('Directory ./CNFs/ is created.')
+    if not os.path.exists('./Stations/'):
+        os.makedirs('./Stations/')
+        print('Directory ./Stations/ is created.')
+    if not os.path.exists('./CSVs/'):
+        os.makedirs('./CSVs/')
+        print('Directory ./CSVs/ is created.')
+    if not os.path.exists('./WCNFs/'):
+        os.makedirs('./WCNFs/')
+        print('Directory ./WCNFs/ is created.')
+
 #============================================================================#
 
 #Параметры
@@ -176,6 +190,8 @@ csv_flag = namespace.csv_output_flag
 stdict_flag = namespace.station_dictionary_flag
 nof_tests = namespace.number_of_tests
 wcnf_flag = namespace.wcnf_output_flag
+create_folders()
+
 
 counter = 0
 while counter < nof_tests:
